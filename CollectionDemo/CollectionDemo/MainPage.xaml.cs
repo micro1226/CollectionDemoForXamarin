@@ -8,14 +8,26 @@ using Xamarin.Forms;
 
 namespace CollectionDemo
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+    public class TestModel
+    {
+        public string Name { get; set; }
+    }
+
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
             InitializeComponent();
+
+            var array = new List<TestModel>();
+            array.Add(new TestModel { Name = "first" });
+
+            //uncomment lines below, it works fine
+            array.Add(new TestModel { Name = "second" });
+            array.Add(new TestModel { Name = "third" });
+            array.Add(new TestModel { Name = "four" });
+            CollectionView.ItemsSource = array;
         }
     }
 }

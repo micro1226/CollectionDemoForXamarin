@@ -3,5 +3,29 @@
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+        <CollectionView x:Name="CollectionView"
+                        BackgroundColor="Silver"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout HorizontalItemSpacing="15"
+                                 Orientation="Vertical"
+                                 Span="3"
+                                 VerticalItemSpacing="15" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="16,10,16,16"
+                           HeightRequest="106"
+                           BackgroundColor="Yellow"
+                           CornerRadius="15">
+                        <FlexLayout Direction="Column">
+                            <Label Text="{Binding Name}" />
+                        </FlexLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 </ContentPage>
